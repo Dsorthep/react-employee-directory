@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useState} from "react";
 import Sort from "./components/Sort";
 import Filter from "./components/Filter";
 import Table from "./components/Table";
 import Row from "./components/Row";
+import { Employees } from "./Employees";
+// import "./index.html";
+
 
 
 export default function App() {
-  const [sort, setSort] = useState("ID");
+  const [sort, setSort] = useState("id");
   const [filter, setFilter] = useState("false");
 
   return (
-    <div className="App">
-     <h1>EMPLOYEE DIRECTORY</h1>
+    <div>
+     <h1 className="App">EMPLOYEE DIRECTORY</h1>
      <Sort onChange={handleSortOnChange} />
      <Filter onChange={handleFilterCheck} />
      <Table />
@@ -25,42 +28,42 @@ export default function App() {
 
   
   function conditionalRender() {
-    if (sort === "ID") {
+    if (sort === "id") {
       if (filter) return filtered()
-      else return sorted("ID");
+      else return sorted("id");
     }
-    if (sort === "NAME") {
+    if (sort === "name") {
       if (filter) return filtered()
-      else return sorted("NAME");
+      else return sorted("name");
     }
-    if (sort === "DEPT") {
+    if (sort === "dept") {
       if (filter) return filtered()
-      else return sorted("DEPT");
+      else return sorted("dept");
     }
   }
 
   
   function filtered() {
     let filteredArray;
-    filteredArray = employees.filtered(e => e.role.toLocaleLowerCase().search("MANAGER") >= 0);
-    return filteredArray.map(emp => <TableRow id={emp.id} key={emp.id} name={emp.name} role={emp.role} department={emp.department} email={emp.email} />);
+    filteredArray = Employees.filtered(e => e.role.toLocaleLowerCase().search("server") >= 0);
+    return filteredArray.map(emp => <Row id={emp.id} key={emp.id} name={emp.name} role={emp.role} dept={emp.dept} email={emp.email} />);
   }
 
   function sorted(sort) {
     let sortedArray = [];
     switch (sort) {
-      case "NAME":
-        sortedArray = employees.sorted((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
+      case "name":
+        sortedArray = Employees.sorted((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
         break;
-      case "ID":
-        sortedArray = employees.sorted((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0));
+      case "id":
+        sortedArray = Employees.sorted((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0));
         break;
-      case "DEPT":
-        sortedArray = employees.sorted((a, b) => (a.department > b.department) ? 1 : ((b.department > a.department) ? -1 : 0));
+      case "dept":
+        sortedArray = Employees.sorted((a, b) => (a.dept > b.dept) ? 1 : ((b.dept > a.dept) ? -1 : 0));
         break;
       default:
     }
-    return sortedArray.map(emp => <TableRow id={emp.id} key={emp.id} name={emp.name} role={emp.role} department={emp.department} email={emp.email} />);
+    return sortedArray.map(emp => <Row id={emp.id} key={emp.id} name={emp.name} role={emp.role} dept={emp.dept} email={emp.email} />);
   }
 }
 

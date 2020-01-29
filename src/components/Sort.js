@@ -9,9 +9,9 @@ export default function Sort(props) {
             <div className="row">
                 <div className="col-4">
                     <select className="form-control " onChange={({ target }) => props.onChange(target.value)}>
-                        <option>ID</option>
                         <option>NAME</option>
                         <option>DEPT</option>
+                        <option>ID</option>
                     </select>
                 </div>
             </div>

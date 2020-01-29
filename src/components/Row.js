@@ -1,14 +1,15 @@
 import React from "react";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function Row() {
+export default function Row({ id, name, role, dept, email }) {
     return (
         <div className="container">
             <div className="row">
-                <div className="row-id">{id}</div>
-                <div className="row-name">{name}</div>
-                <div className="row-role">{role}</div>
-                <div className="row-dept">{department}</div>
-                <div className="row-email">{email}</div>
+                <div className="col-1">{id}</div>
+                <div className="col-2">{name}</div>
+                <div className="col-3">{role}</div>
+                <div className="col-4">{dept}</div>
+                <div className="col-5">{email}</div>
             </div>
         </div>
     );
