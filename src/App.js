@@ -27,7 +27,7 @@ export default function App() {
   function handleFilterCheck(checked) { return checked ? setFilter(true) : setFilter(false) }
 
   
-  function conditionalRender() {
+  function render() {
     if (sort === "id") {
       if (filter) return filtered()
       else return sorted("id");
