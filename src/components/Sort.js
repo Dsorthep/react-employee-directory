@@ -5,7 +5,7 @@ export default function Sort(props) {
     return (
         <div className="container">
             <div className="row">
-                <div>SORT BY...</div>
+                <div className="sort">SORT BY...</div>
             </div>
             <div className="row">
                 <div className="col-3">

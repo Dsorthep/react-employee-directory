@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Ultra&display=swap');
 .container{
   background-color: goldenrod;
-  border: black;
-  border-radius: 20px;
+  border: black solid 5px;
+  border-radius: 10px;
   margin: 100px auto;
   position: relative;
   font-family: 'Ultra', serif;
+  font-size: 24px;
   color: red;
  
 }
@@ -21,5 +22,9 @@
 }
 
 .form-control {
-  align-content: center;
+  margin-bottom: 10px;
+}
+
+.sort {
+  padding-left: 10px;
 }
