@@ -1,65 +1,62 @@
 export const employees = [
     {
         "id": 1,
-        "name": "Bob Belcher",
-        "dept": "Back of House",
+        "name": "Bob",
         "role": "Executive Chef",
         "email": "bob@gmail.com"
     },
     {
         "id": 2,
-        "name": "Linda Belcher",
-        "dept": "Front of House",
+        "name": "Linda",
         "role": "General Manager",
         "email": "linda@gmail.com"
     },
     {
         "id": 3,
-        "name": "Tina Belcher",
-        "dept": "Front of House",
+        "name": "Tina",
         "role": "Server",
         "email": "tina@wagstaff.edu"
     },
     {
         "id": 4,
-        "name": "Gene Belcher",
-        "dept": "Front of House",
+        "name": "Gene",
         "role": "Busser",
         "email": "gene@wagstaff.edu"
     },
     {
         "id": 5,
-        "name": "Louise Belcher",
-        "dept": "Front of House",
+        "name": "Louise",
         "role": "Hostess",
         "email": "louise@wagstaff.edu"
     },
     {
         "id": 6,
         "name": "Teddy",
-        "dept": "Front of House",
         "role": "Server",
         "email": "teddy@aol.com"
     },
     {
         "id": 7,
-        "name": "Bob Belcher Sr.",
-        "dept": "Back of House",
+        "name": "Bob Sr.",
         "role": "Executive Chef",
         "email": "bobsr@yahoo.com"
     },
     {
         "id": 8,
         "name": "Regular Sized Rudy",
-        "dept": "Back of House",
         "role": "Host",
         "email": "regrudy@wagstaff.edu"
     },
     {
         "id": 9,
         "name": "Jimmy Pesto Jr.",
-        "dept": "Front of House",
         "role": "Server",
         "email": "jimmyjr@wagstaff.edu"
+    },
+    {
+        "id": 10,
+        "name": "Tammy",
+        "role": "Server",
+        "email": "tammy@wagstaff.edu"
     }
 ];

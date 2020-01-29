@@ -1,69 +1,84 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Sort from "./components/Sort";
 import Filter from "./components/Filter";
 import Table from "./components/Table";
 import Row from "./components/Row";
 import { employees } from "./Employees";
-
-
+import "./App.css";
 
 
 export default function App() {
-  const [sort, setSort] = useState("id");
-  const [filter, setFilter] = useState("false");
+
+  const [sorted, setSorted] = useState("ID");
+  const [filtered, setFiltered] = useState("false");
 
   return (
-    <div>
+    <div className="container">
      <h1 className="App">EMPLOYEE DIRECTORY</h1>
      <Sort onChange={handleSortOnChange} />
      <Filter onChange={handleFilterCheck} />
      <Table />
+     {render()}
     </div>
   );
 
-  function handleSortOnChange(value) { setSort(value) }
+  function handleSortOnChange(value) { 
+    setSorted(value) 
+  }
 
   
-  function handleFilterCheck(checked) { return checked ? setFilter(true) : setFilter(false) }
+  function handleFilterCheck(checked) { 
+    return checked ? setFiltered(true) : setFiltered(false) 
+  }
 
   
   function render() {
-    if (sort === "id") {
-      if (filter) return filtered()
-      else return sorted("id");
+    if (sorted === "ID") {
+      if (filtered) 
+      return filter()
+      else return sort("ID");
     }
-    if (sort === "name") {
-      if (filter) return filtered()
-      else return sorted("name");
-    }
-    if (sort === "dept") {
-      if (filter) return filtered()
-      else return sorted("dept");
+    if (sorted === "NAME") {
+      if (filtered) 
+      return filter()
+      else return sort("NAME");
     }
   }
 
   
-  function filtered() {
+  function filter() {
     let filteredArray;
-    filteredArray = employees.filtered(e => e.role.toLocaleLowerCase().search("server") >= 0);
-    return filteredArray.map(emp => <Row id={emp.id} key={emp.id} name={emp.name} role={emp.role} dept={emp.dept} email={emp.email} />);
+    filteredArray = employees.filter(e => e.role.toLocaleLowerCase().search("Server") >= 0);
+    return filteredArray.map(emp => 
+    <Row 
+    id={employees.id} 
+    key={employees.id} 
+    name={employees.name} 
+    role={employees.role} 
+    email={employees.email} 
+    />
+    );
   }
 
-  function sorted(sort) {
+  function sort(sorted) {
     let sortedArray = [];
-    switch (sort) {
-      case "name":
-        sortedArray = employees.sorted((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
+    switch (sorted) {
+      case "NAME":
+        sortedArray = employees.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
         break;
-      case "id":
-        sortedArray = employees.sorted((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0));
-        break;
-      case "dept":
-        sortedArray = employees.sorted((a, b) => (a.dept > b.dept) ? 1 : ((b.dept > a.dept) ? -1 : 0));
+      case "ID":
+        sortedArray = employees.sort((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0));
         break;
       default:
     }
-    return sortedArray.map(emp => <Row id={emp.id} key={emp.id} name={emp.name} role={emp.role} dept={emp.dept} email={emp.email} />);
+    return sortedArray.map(emp => 
+    <Row 
+    id={employees.id} 
+    key={employees.id} 
+    name={employees.name} 
+    email={employees.email} 
+    />
+    );
   }
 }
 

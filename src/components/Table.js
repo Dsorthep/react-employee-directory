@@ -1,15 +1,15 @@
 import React from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../App.css";
 
 export default function Table(props) {
     return (
-        <div className="container">
+        <div className="container fluid mt-0">
             <div className="row">
-                <div className="col-1">id</div>
-                <div className="col-2">name</div>
-                <div className="col-3">role</div>
-                <div className="col-4">dept</div>
-                <div className="col-5">email</div>
+                <div className="col-3">ID</div>
+                <div className="col-3">NAME</div>
+                <div className="col-3">ROLE</div>
+                <div className="col-3">EMAIL</div>
             </div>
         </div>
     );
