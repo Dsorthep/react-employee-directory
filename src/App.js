@@ -3,8 +3,8 @@ import Sort from "./components/Sort";
 import Filter from "./components/Filter";
 import Table from "./components/Table";
 import Row from "./components/Row";
-import { Employees } from "./Employees";
-// import "./index.html";
+import { employees } from "./Employees";
+
 
 
 
@@ -45,7 +45,7 @@ export default function App() {
   
   function filtered() {
     let filteredArray;
-    filteredArray = Employees.filtered(e => e.role.toLocaleLowerCase().search("server") >= 0);
+    filteredArray = employees.filtered(e => e.role.toLocaleLowerCase().search("server") >= 0);
     return filteredArray.map(emp => <Row id={emp.id} key={emp.id} name={emp.name} role={emp.role} dept={emp.dept} email={emp.email} />);
   }
 
@@ -53,13 +53,13 @@ export default function App() {
     let sortedArray = [];
     switch (sort) {
       case "name":
-        sortedArray = Employees.sorted((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
+        sortedArray = employees.sorted((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
         break;
       case "id":
-        sortedArray = Employees.sorted((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0));
+        sortedArray = employees.sorted((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0));
         break;
       case "dept":
-        sortedArray = Employees.sorted((a, b) => (a.dept > b.dept) ? 1 : ((b.dept > a.dept) ? -1 : 0));
+        sortedArray = employees.sorted((a, b) => (a.dept > b.dept) ? 1 : ((b.dept > a.dept) ? -1 : 0));
         break;
       default:
     }
