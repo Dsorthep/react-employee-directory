@@ -9,6 +9,6 @@ You'll be able to sort and filter through the employee directory and find contac
 TECHNOLOGIES
 React JS / Bootstrap / CSS 
 
-Check it out here: https://ds-react-employee-directory.netlify.com/
+Check it out here: https://ds-employee-directory.netlify.com/
 
 ![Employee Directory](public/react-emp-directory-sn.png "Employee Directory")
