@@ -10,3 +10,5 @@ TECHNOLOGIES
 React JS / Bootstrap / CSS 
 
 Check it out here: https://ds-react-employee-directory.netlify.com/
+
+![Employee Directory](public/react-emp-directory-sn.png "Employee Directory")
