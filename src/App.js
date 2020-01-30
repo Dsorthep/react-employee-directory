@@ -48,8 +48,8 @@ export default function App() {
   
   function filter() {
     let filteredArray;
-    filteredArray = employees.filter(e => e.role.toLocaleLowerCase().search("Server") >= 0);
-    return filteredArray.map(emp => 
+    filteredArray = employees.filter(employees => employees.role.toLocaleLowerCase().search("server") >= 0);
+    return filteredArray.map(employees => 
     <Row 
     id={employees.id} 
     key={employees.id} 
@@ -71,11 +71,12 @@ export default function App() {
         break;
       default:
     }
-    return sortedArray.map(emp => 
+    return sortedArray.map(employees => 
     <Row 
     id={employees.id} 
     key={employees.id} 
     name={employees.name} 
+    role={employees.role}
     email={employees.email} 
     />
     );

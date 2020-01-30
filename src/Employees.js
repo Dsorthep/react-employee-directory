@@ -26,7 +26,7 @@ export const employees = [
     {
         "id": 5,
         "name": "Louise",
-        "role": "Hostess",
+        "role": "Host",
         "email": "louise@wagstaff.edu"
     },
     {

@@ -5,7 +5,7 @@ export default function Filter(props) {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-12">
+                <div className="col-4">
                     <input
                         type="checkbox"
                         value="Server"
