@@ -10,24 +10,16 @@ import "./App.css";
 export default function App() {
 
   const [sorted, setSorted] = useState("ID");
-  const [filtered, setFiltered] = useState("false");
+  const [filtered, setFiltered] = useState(false);
 
-  return (
-    <div className="container">
-     <h1 className="App">EMPLOYEE DIRECTORY</h1>
-     <Sort onChange={handleSortOnChange} />
-     <Filter onChange={handleFilterCheck} />
-     <Table />
-     {render()}
-    </div>
-  );
-
-  function handleSortOnChange(value) { 
+  function handleSortOnChange(value) {
+    console.log("sorting")
     setSorted(value) 
   }
 
   
   function handleFilterCheck(checked) { 
+    console.log("filtering")
     return checked ? setFiltered(true) : setFiltered(false) 
   }
 
@@ -81,6 +73,16 @@ export default function App() {
     />
     );
   }
+
+  return (
+    <div className="container">
+     <h1 className="App">EMPLOYEE DIRECTORY</h1>
+     <Sort onChange={handleSortOnChange} />
+     <Filter onChange={handleFilterCheck} />
+     <Table />
+     {render()}
+    </div>
+  );
 }
 
 
